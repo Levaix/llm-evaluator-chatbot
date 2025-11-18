@@ -1,0 +1,22 @@
+# This directory should contain Q&A_db_practice.json
+# 
+# Expected format:
+# [
+#   {
+#     "question": "What is an activation function?",
+#     "answer": "An activation function introduces non-linearity into neural networks..."
+#   },
+#   {
+#     "question": "Explain backpropagation.",
+#     "answer": "Backpropagation is an algorithm for training neural networks..."
+#   }
+# ]
+
+
+
+
+
+
+
+
+
