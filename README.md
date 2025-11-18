@@ -98,6 +98,25 @@ Place your `Q&A_db_practice.json` file in the `data/` directory. The file should
 
 ## 🎯 Running the Application
 
+> ⚠️ **IMPORTANT: Set up API Key First!**
+> 
+> **Before running the Streamlit application, you MUST set up your OpenAI API key:**
+> 
+> 1. Copy `.env.example` to `.env`:
+>    - **Windows**: `copy .env.example .env`
+>    - **Linux/macOS**: `cp .env.example .env`
+> 
+> 2. Open `.env` and replace `REPLACE_ME` with your actual OpenAI API key:
+>    ```
+>    OPENAI_API_KEY=sk-your-actual-api-key-here
+>    ```
+> 
+> 3. Get your API key from: https://platform.openai.com/api-keys
+> 
+> **Without setting the API key, the application will show an error: "Missing OpenAI credentials"**
+> 
+> See the [Environment Variables](#-environment-variables) section for more details.
+
 ### Option 1: Using the Launcher Scripts
 
 **Windows:**
