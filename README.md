@@ -59,6 +59,8 @@ The system provides an interactive web interface where:
 
 ## 🚀 Installation
 
+> **⚠️ Important**: Before starting, make sure you are in the **project root folder** (the folder that contains `requirements.txt`, `README.md`, `app/`, `src/`, `notebooks/`, etc.). All commands should be run from this directory.
+
 ### 1. Create Virtual Environment
 
 **Windows:**
