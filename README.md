@@ -196,11 +196,51 @@ Then navigate to the `notebooks/` folder in the browser and open any notebook.
 jupyter lab
 ```
 
-**Option 3: VS Code**
-1. Install the "Jupyter" extension in VS Code
-2. Open any `.ipynb` file
-3. VS Code will automatically detect it as a notebook
-4. Run cells individually or click "Run All"
+**Option 3: VS Code (Step-by-Step)**
+
+1. **Install the Jupyter Extension:**
+   - Open VS Code
+   - Press `Ctrl+Shift+X` (or `Cmd+Shift+X` on Mac) to open Extensions
+   - Search for "Jupyter" (by Microsoft)
+   - Click "Install"
+
+2. **Ensure Virtual Environment is Set Up:**
+   - Open a terminal in VS Code: `Ctrl+`` (backtick) or `Terminal > New Terminal`
+   - Activate your virtual environment:
+     - **Windows**: `.venv\Scripts\activate`
+     - **Linux/macOS**: `source .venv/bin/activate`
+   - Verify activation: you should see `(.venv)` in your terminal prompt
+
+3. **Install Jupyter in Virtual Environment:**
+   ```bash
+   pip install jupyter notebook
+   ```
+   (Make sure your venv is activated - you should see `(.venv)` in the terminal)
+
+4. **Open a Notebook:**
+   - Navigate to the `notebooks/` folder in VS Code
+   - Open any `.ipynb` file (e.g., `01_explore_dataset.ipynb`)
+
+5. **Select the Correct Python Kernel:**
+   - When you open the notebook, VS Code will show a kernel selector in the top-right
+   - Click on the kernel selector (it might say "Select Kernel" or show a Python version)
+   - Choose the Python interpreter from your virtual environment:
+     - Look for `.venv` or `Python 3.x.x ('.venv': venv)` in the list
+     - If you don't see it, click "Select Another Kernel" → "Python Environments" → select `.venv`
+   - **Important**: The kernel should show `.venv` in its name to confirm it's using your virtual environment
+
+6. **Verify the Kernel:**
+   - In the first cell of the notebook, run:
+     ```python
+     import sys
+     print(sys.executable)
+     ```
+   - The output should show a path containing `.venv` (e.g., `C:\Users\...\DAI Assignment Part 2\.venv\Scripts\python.exe`)
+
+7. **Run Notebook Cells:**
+   - Click the "Run" button above a cell, or press `Shift+Enter`
+   - To run all cells: Click "Run All" in the toolbar
+   - Cells will execute using your virtual environment's Python and packages
 
 #### Notebook Descriptions
 
