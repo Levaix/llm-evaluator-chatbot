@@ -60,6 +60,8 @@ The system provides an interactive web interface where:
 ## 🚀 Installation
 
 > **⚠️ Important**: Before starting, make sure you are in the **project root folder** (the folder that contains `requirements.txt`, `README.md`, `app/`, `src/`, `notebooks/`, etc.). All commands should be run from this directory.
+> 
+> **📝 Note for Jupyter Notebook App Users**: All setup commands below (creating venv, installing dependencies, etc.) must be run in **Windows Command Prompt** or **PowerShell**, NOT in the Jupyter Notebook application itself. The Jupyter app is only for running notebooks after setup is complete. Open Command Prompt or PowerShell separately to run these installation commands.
 
 ### 1. Create Virtual Environment
 
@@ -164,6 +166,8 @@ The app will open in your default web browser at `http://localhost:8501`.
 The project includes three Jupyter notebooks for exploration and testing:
 
 #### Prerequisites
+
+> **⚠️ Important**: Before opening notebooks, you must complete the **Installation** section above (Steps 1-3), especially installing all dependencies with `pip install -r requirements.txt`. These commands must be run in **Windows Command Prompt** or **PowerShell**, not in the Jupyter Notebook application.
 
 1. **Install Jupyter** (if not already installed):
    ```bash
