@@ -181,20 +181,97 @@ The project includes three Jupyter notebooks for exploration and testing:
 
 #### Running the Notebooks
 
-**Option 1: Jupyter Notebook (Classic)**
-```bash
-# Navigate to project root
-cd "C:\Users\Levin\OneDrive\Desktop\DAI Assignment Part 2" #student example.....professor folder after downloading
+**Option 1: Jupyter Notebook (Classic) - Step-by-Step**
 
-# Start Jupyter
-jupyter notebook
-```
-Then navigate to the `notebooks/` folder in the browser and open any notebook.
+1. **Open Terminal/Command Prompt:**
+   - Open your terminal (Command Prompt, PowerShell, or Terminal)
+   - Navigate to the project root folder (where `requirements.txt` is located):
+     ```bash
+     cd "C:\Users\YourName\Desktop\DAI Assignment Part 2"
+     ```
+     (Replace with your actual project path)
 
-**Option 2: JupyterLab**
-```bash
-jupyter lab
-```
+2. **Activate Virtual Environment:**
+   - **Windows**: `.venv\Scripts\activate`
+   - **Linux/macOS**: `source .venv/bin/activate`
+   - You should see `(.venv)` appear in your terminal prompt
+
+3. **Verify Jupyter is Installed:**
+   ```bash
+   pip show jupyter
+   ```
+   - If it shows "not found", install it:
+     ```bash
+     pip install jupyter notebook
+     ```
+
+4. **Start Jupyter Notebook:**
+   ```bash
+   jupyter notebook
+   ```
+   - This will open Jupyter in your default web browser
+   - A new browser tab/window should open showing the Jupyter file browser
+
+5. **Navigate to Notebooks Folder:**
+   - In the Jupyter browser interface, click on the `notebooks/` folder
+   - You'll see the three notebook files:
+     - `01_explore_dataset.ipynb`
+     - `02_evaluation_prototyping.ipynb`
+     - `03_batch_simulation.ipynb`
+
+6. **Open a Notebook:**
+   - Click on any `.ipynb` file to open it
+   - The notebook will open in a new tab
+
+7. **Verify Kernel is Using venv:**
+   - In the notebook, create a new cell and run:
+     ```python
+     import sys
+     print(sys.executable)
+     ```
+   - The output should show a path containing `.venv` (e.g., `C:\Users\...\DAI Assignment Part 2\.venv\Scripts\python.exe`)
+
+8. **Run Notebook Cells:**
+   - Click on a cell to select it
+   - Press `Shift+Enter` to run the cell
+   - Or click the "Run" button in the toolbar
+   - To run all cells: `Cell` → `Run All`
+
+**Option 2: JupyterLab - Step-by-Step**
+
+1. **Open Terminal/Command Prompt:**
+   - Navigate to project root folder:
+     ```bash
+     cd "C:\Users\YourName\Desktop\DAI Assignment Part 2"
+     ```
+
+2. **Activate Virtual Environment:**
+   - **Windows**: `.venv\Scripts\activate`
+   - **Linux/macOS**: `source .venv/bin/activate`
+
+3. **Install JupyterLab (if not installed):**
+   ```bash
+   pip install jupyterlab
+   ```
+
+4. **Start JupyterLab:**
+   ```bash
+   jupyter lab
+   ```
+   - This opens JupyterLab in your browser with a more advanced interface
+
+5. **Open Notebooks:**
+   - In the left sidebar, navigate to `notebooks/` folder
+   - Double-click any `.ipynb` file to open it
+   - The notebook will open in the main panel
+
+6. **Select Kernel (if needed):**
+   - If prompted, select the Python kernel from your virtual environment
+   - The kernel should automatically use the venv if Jupyter was started with venv activated
+
+7. **Run Cells:**
+   - Click on a cell and press `Shift+Enter` to run
+   - Or use the toolbar buttons
 
 **Option 3: VS Code (Step-by-Step)**
 
