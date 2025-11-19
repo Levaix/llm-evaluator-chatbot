@@ -31,7 +31,7 @@ The system provides an interactive web interface where:
 ```
 .
 ├── data/
-│   ├── Q&A_db_practice.json      # Q&A database (you need to provide this)
+│   ├── Q&A_db_practice.json      # Q&A database (included in repository)
 │   └── evaluations_log.jsonl     # Log file (created automatically)
 ├── src/
 │   ├── __init__.py
@@ -81,7 +81,7 @@ pip install -r requirements.txt
 
 ### 3. Prepare Dataset
 
-Place your `Q&A_db_practice.json` file in the `data/` directory. The file should be a JSON array of objects with this format:
+The `Q&A_db_practice.json` file is already included in the repository in the `data/` directory. The file contains a JSON array of objects with this format:
 
 ```json
 [
@@ -95,6 +95,8 @@ Place your `Q&A_db_practice.json` file in the `data/` directory. The file should
   }
 ]
 ```
+
+> **Note**: If you want to use your own dataset, you can replace `data/Q&A_db_practice.json` with your own file following the same format.
 
 ## 🎯 Running the Application
 
@@ -220,7 +222,7 @@ jupyter lab
 
 - **"ModuleNotFoundError: No module named 'src'"**: Start Jupyter from the project root directory
 - **"Missing OpenAI credentials"**: Set `OPENAI_API_KEY` environment variable or create `.env` file
-- **"FileNotFoundError: Q&A database file not found"**: Ensure `data/Q&A_db_practice.json` exists
+- **"FileNotFoundError: Q&A database file not found"**: The file should be included in the repository. If missing, ensure you've cloned/downloaded the complete repository.
 - **Jupyter not found**: Install with `pip install jupyter notebook`
 
 **Note**: All notebooks automatically load environment variables from `.env` file (if it exists) thanks to `python-dotenv` in the first cell.
@@ -498,7 +500,7 @@ All evaluations are logged to `data/evaluations_log.jsonl` in JSONL format. Each
 - **Service Unavailable**: Automatic retries are not built-in—rerun the evaluation or add retry logic around `generate_completion`.
 
 ### Dataset Issues
-- **File not found**: Ensure `Q&A_db_practice.json` exists in `data/`
+- **File not found**: The `Q&A_db_practice.json` file is included in the repository. If missing, ensure you've cloned/downloaded the complete repository.
 - **Invalid JSON**: Validate JSON format
 - **Empty dataset**: Ensure at least one question-answer pair exists
 
