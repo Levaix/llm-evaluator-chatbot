@@ -117,6 +117,8 @@ The `Q&A_db_practice.json` file is already included in the repository in the `da
 > 
 > **Without setting the API key, the application will show an error: "Missing OpenAI credentials"**
 > 
+> > **Note for Professor**: The OpenAI API key will be provided separately via email/private communication.
+> 
 > See the [Environment Variables](#-environment-variables) section for more details.
 
 ### Option 1: Using the Launcher Scripts
