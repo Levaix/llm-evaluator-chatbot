@@ -198,11 +198,13 @@ jupyter lab
 
 **Option 3: VS Code (Step-by-Step)**
 
-1. **Install the Jupyter Extension:**
+1. **Install Required VS Code Extensions:**
    - Open VS Code
    - Press `Ctrl+Shift+X` (or `Cmd+Shift+X` on Mac) to open Extensions
-   - Search for "Jupyter" (by Microsoft)
-   - Click "Install"
+   - Install **both** extensions (both are required):
+     - **"Python"** (by Microsoft) - Required for kernel detection
+     - **"Jupyter"** (by Microsoft) - Required for notebook support
+   - Restart VS Code after installing
 
 2. **Ensure Virtual Environment is Set Up:**
    - Open a terminal in VS Code: `Ctrl+`` (backtick) or `Terminal > New Terminal`
@@ -211,11 +213,13 @@ jupyter lab
      - **Linux/macOS**: `source .venv/bin/activate`
    - Verify activation: you should see `(.venv)` in your terminal prompt
 
-3. **Install Jupyter in Virtual Environment:**
+3. **Install Jupyter and ipykernel in Virtual Environment:**
    ```bash
-   pip install jupyter notebook
+   pip install jupyter notebook ipykernel
    ```
    (Make sure your venv is activated - you should see `(.venv)` in the terminal)
+   
+   **Note**: `ipykernel` is required for VS Code to detect your virtual environment as a kernel option.
 
 4. **Open a Notebook:**
    - Navigate to the `notebooks/` folder in VS Code
@@ -241,6 +245,71 @@ jupyter lab
    - Click the "Run" button above a cell, or press `Shift+Enter`
    - To run all cells: Click "Run All" in the toolbar
    - Cells will execute using your virtual environment's Python and packages
+
+**Troubleshooting: Can't Find `.venv` Kernel in VS Code**
+
+If the `.venv` kernel doesn't appear in the kernel selector, try these solutions:
+
+**Solution 1: Install Python Extension (Required)**
+- VS Code needs **both** the "Python" extension AND the "Jupyter" extension
+- Press `Ctrl+Shift+X` → Search for "Python" (by Microsoft) → Install
+- Restart VS Code after installing
+
+**Solution 2: Install ipykernel in Virtual Environment**
+- Open terminal in VS Code (`Ctrl+``)
+- Activate venv: `.venv\Scripts\activate` (Windows) or `source .venv/bin/activate` (Linux/macOS)
+- Install ipykernel: `pip install ipykernel`
+- Register the kernel: `python -m ipykernel install --user --name=.venv --display-name "Python (.venv)"`
+- Restart VS Code
+
+**Solution 3: Manually Point to the venv Interpreter**
+
+If the `.venv` interpreter doesn't appear in the list, manually point to it:
+
+**Option 1: Enter Interpreter Path Manually**
+1. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
+2. Type: `Python: Select Interpreter`
+3. Click "Enter interpreter path..."
+4. Click "Find..."
+5. Navigate to your project folder
+6. Go into `.venv` → `Scripts` → select `python.exe`
+7. Click "Select Interpreter"
+8. **Then** open the notebook - the kernel should now be available
+
+**Option 2: Check if .venv Folder Exists**
+- In VS Code terminal, run:
+  - **Windows**: `dir .venv`
+  - **Linux/macOS**: `ls .venv`
+- If it doesn't exist, the venv wasn't created. Create it:
+  ```bash
+  python -m venv .venv
+  .venv\Scripts\activate  # Windows
+  # or
+  source .venv/bin/activate  # Linux/macOS
+  pip install -r requirements.txt
+  ```
+
+**Solution 4: Manual Kernel Selection**
+- Open the notebook
+- Click kernel selector (top-right)
+- Click "Select Another Kernel" → "Python Environments"
+- If `.venv` still doesn't appear, click "Enter interpreter path..." → Browse to `.venv\Scripts\python.exe` (Windows) or `.venv/bin/python` (Linux/macOS)
+
+**Solution 5: Reload VS Code Window**
+- Press `Ctrl+Shift+P` → Type "Developer: Reload Window"
+- This refreshes VS Code's environment detection
+
+**Solution 6: Verify Virtual Environment Exists**
+- Check that `.venv` folder exists in project root
+- Verify it has `Scripts\python.exe` (Windows) or `bin/python` (Linux/macOS)
+- If missing, recreate: `python -m venv .venv`
+
+**Alternative: Use Jupyter Notebook Directly**
+If VS Code continues to have issues, you can use Jupyter Notebook in your browser:
+1. Activate venv in terminal: `.venv\Scripts\activate`
+2. Install Jupyter: `pip install jupyter notebook`
+3. Start Jupyter: `jupyter notebook`
+4. Open notebook in browser - it will automatically use the venv
 
 #### Notebook Descriptions
 
