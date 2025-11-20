@@ -123,6 +123,15 @@ The `Q&A_db_practice.json` file is already included in the repository in the `da
 > 
 > 3. Get your API key from: https://platform.openai.com/api-keys
 > 
+> **⚠️ Troubleshooting: If you see "wrong API key" errors even though your `.env` file is correct:**
+> - Shell environment variables override `.env` files. Check if `OPENAI_API_KEY` is set in your terminal:
+>   - **Mac/Linux**: `echo $OPENAI_API_KEY`
+>   - **Windows PowerShell**: `$env:OPENAI_API_KEY`
+> - If it shows an old/truncated key, unset it:
+>   - **Mac/Linux**: `unset OPENAI_API_KEY`
+>   - **Windows PowerShell**: `Remove-Item Env:\OPENAI_API_KEY`
+> - Then restart the app - it will use the `.env` file instead.
+> 
 > **Without setting the API key, the application will show an error: "Missing OpenAI credentials"**
 > 
 > > **Note for Professor**: The OpenAI API key will be provided separately via email/private communication.
