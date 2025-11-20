@@ -73,9 +73,13 @@ python -m venv .venv
 
 **Linux/macOS:**
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 ```
+
+> **Note**: If `python3` is not found, install Python 3 first:
+> - **macOS**: `brew install python3` or download from [python.org](https://www.python.org/downloads/)
+> - **Linux**: `sudo apt-get install python3 python3-venv` (Debian/Ubuntu) or `sudo yum install python3` (RHEL/CentOS)
 
 ### 2. Install Dependencies
 
@@ -342,7 +346,7 @@ If the `.venv` kernel doesn't appear in the kernel selector, try these solutions
 - Open terminal in VS Code (`Ctrl+``)
 - Activate venv: `.venv\Scripts\activate` (Windows) or `source .venv/bin/activate` (Linux/macOS)
 - Install ipykernel: `pip install ipykernel`
-- Register the kernel: `python -m ipykernel install --user --name=.venv --display-name "Python (.venv)"`
+- Register the kernel: `python -m ipykernel install --user --name=.venv --display-name "Python (.venv)"` (Windows) or `python3 -m ipykernel install --user --name=.venv --display-name "Python (.venv)"` (Linux/macOS)
 - Restart VS Code
 
 **Solution 3: Manually Point to the venv Interpreter**
@@ -365,9 +369,9 @@ If the `.venv` interpreter doesn't appear in the list, manually point to it:
   - **Linux/macOS**: `ls .venv`
 - If it doesn't exist, the venv wasn't created. Create it:
   ```bash
-  python -m venv .venv
+  python -m venv .venv  # Windows
+  python3 -m venv .venv  # Linux/macOS
   .venv\Scripts\activate  # Windows
-  # or
   source .venv/bin/activate  # Linux/macOS
   pip install -r requirements.txt
   ```
@@ -385,7 +389,7 @@ If the `.venv` interpreter doesn't appear in the list, manually point to it:
 **Solution 6: Verify Virtual Environment Exists**
 - Check that `.venv` folder exists in project root
 - Verify it has `Scripts\python.exe` (Windows) or `bin/python` (Linux/macOS)
-- If missing, recreate: `python -m venv .venv`
+- If missing, recreate: `python -m venv .venv` (Windows) or `python3 -m venv .venv` (Linux/macOS)
 
 **Alternative: Use Jupyter Notebook Directly**
 If VS Code continues to have issues, you can use Jupyter Notebook in your browser:
